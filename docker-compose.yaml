@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  elasticsearch:
+    image: ${DOCKER_REGISTRY-}elasticsearch
+    build:
+      context: ./
+    container_name: elasticsearch
+    hostname: elasticsearch
+    environment:
+      ELASTIC_USERNAME: "elastic"
+      ELASTIC_PASSWORD: "MagicWord"
+    ports:
+      - "9200:9200"
